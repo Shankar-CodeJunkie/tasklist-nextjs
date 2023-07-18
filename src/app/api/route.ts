@@ -4,12 +4,12 @@ dotenv.config();
 const url = String(process.env.mongodburl);
 const client = new MongoClient(url);
 console.log(process.env.mongodburl);
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 import { NextApiRequest, NextApiResponse } from 'next'
 
 
-export async function addTask(taskDetails:any) {
+/*export async function addTask(taskDetails:any) {
   await client.db('Shankar')
       .collection('mySkills')
       .insertOne({
@@ -61,7 +61,7 @@ type Data = {
   expiresIn: number;
 }
 
-export async function GET(request: NextApiRequest, response: NextApiResponse) {
+export async function GET(request: NextRequest, response: NextResponse) {
   // ...
   console.log('yes coming', request.url)
   switch(request.method){
@@ -73,4 +73,4 @@ export async function GET(request: NextApiRequest, response: NextApiResponse) {
       return NextResponse.json({data:'hi0'}); 
 
   }
-}
+}*/

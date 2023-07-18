@@ -47,9 +47,9 @@ export default function TaskList() {
                             <h5>New</h5>
                             {
                                tasks.filter(x => x.taskStatus === 'New')
-                               .map(x => {
+                               .map((x, index) => {
                                 console.log(x)
-                                 return <TaskItem props={x} />
+                                 return <TaskItem props={x} key={index}/>
                                })
                             }
                         </div>
@@ -64,9 +64,9 @@ export default function TaskList() {
                        <h5>In-Progress</h5>
                        {
                           tasks.filter(x => x.taskStatus === 'InProgress')
-                          .map(x => {
+                          .map((x, index) => {
                            console.log(x)
-                            return <TaskItem props={x} />
+                            return <TaskItem props={x} key={index}  />
                           })
                        }
                    </div>
@@ -79,9 +79,9 @@ export default function TaskList() {
                        <h5>Backlog</h5>
                        {
                           tasks.filter(x => x.taskStatus === 'Backlog')
-                          .map(x => {
+                          .map((x, index) => {
                            console.log(x)
-                            return <TaskItem props={x} />
+                            return <TaskItem props={x} key={index} />
                           })
                        }
                    </div>
@@ -93,9 +93,9 @@ export default function TaskList() {
                        <h5>Closed</h5>
                        {
                           tasks.filter(x => x.taskStatus === 'Closed')
-                          .map(x => {
+                          .map((x, index) => {
                            console.log(x)
-                            return <TaskItem props={x} />
+                            return <TaskItem props={x} key={index} />
                           })
                        }
                    </div>

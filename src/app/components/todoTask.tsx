@@ -14,7 +14,7 @@ type taskItem = {
 }
 
 
-const TaskItem = (props:taskItem) => {
+const TaskItem = (props:any) => {
     return (
         <Tile className={"individual-task"} >
 
