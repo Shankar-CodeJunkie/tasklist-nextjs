@@ -1,0 +1,10 @@
+@use '@carbon/react';
+
+
+.individual_task {
+    position: relative;
+    border-radius: 1rem;
+    margin-bottom: 2vh;
+    border-radius: 2vh;
+    margin: 2vh;
+}  

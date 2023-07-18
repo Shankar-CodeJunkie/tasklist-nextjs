@@ -1,0 +1,45 @@
+@use '@carbon/react';
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/colors' as *;
+@use '~@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '~@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/colors' as *;
+
+body {
+  //background: colors.$blue-50;
+  color: react.$text-primary;
+}
+
+.theme-section {
+  background: react.$background;
+  color: react.$text-primary;
+}
+
+:root {
+  @include react.theme(react.$g10);
+}
+
+[data-carbon-theme='g100'] {
+  @include react.theme(react.$g100);
+}
+
+.individual-task {
+  position: relative;
+  border-radius: 1rem;
+  margin-bottom: 2vh;
+  border-radius: 2vh;
+  margin: 2vh;
+}
+
+.individual-task .title {
+  //color: react.colors;
+  margin-bottom: $spacing-03;
+  @include type-style('heading-01');
+}
+
+.individual-task .dueBy {
+  color: $border-interactive;
+  margin-top: 2vh;
+}
