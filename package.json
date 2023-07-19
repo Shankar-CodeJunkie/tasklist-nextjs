@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@carbon/colors": "^11.17.1",
-    "@carbon/react": "1.32.0",
+    "@carbon/icons-react": "^11.22.1",
+    "@carbon/react": "1.21.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",

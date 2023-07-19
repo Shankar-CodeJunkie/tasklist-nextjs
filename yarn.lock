@@ -19,6 +19,11 @@
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-11.17.1.tgz#3aba3b495b3d4a635fa2bd1e6f16996163a92d62"
   integrity sha512-Q2VlMaZcl3U9Qc1RQbhuf4M4SVuJIeE+NIIDExPCRFaWeuN/5EIUYxEkPgDqvkLU91QTu6lH8TqxFPZORlRvDA==
 
+"@carbon/feature-flags@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.12.0.tgz#5833161a4449541113d416708967eae4e12ce6cf"
+  integrity sha512-7jspPbQNk//S787QDtDI/jAGEt2MKc0aHJEQ32UFXXNb8hIr/VpVQTTu7OZoUiSF23F3Dsnr4HcEXsj6Nq9Ikw==
+
 "@carbon/feature-flags@^0.15.0":
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.15.0.tgz#108434a0bb3008bb4f2efeff9442892fe584c357"
@@ -36,7 +41,7 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.42.1.tgz#066fbf6e282ed710305009ee38bfdc8b292f0685"
   integrity sha512-LsXHvoi/RAxYQz1GC7Ae7WOwJE4HKOXYmSOWuDEtSEW94Adz/1w968pje/7Gfr7nsJ/GcP6lNcQoSpYq9iDSpQ==
 
-"@carbon/icons-react@^11.21.0":
+"@carbon/icons-react@^11.15.0", "@carbon/icons-react@^11.22.1":
   version "11.22.1"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.22.1.tgz#bc3e88d202219336fc60f50d8f45ea0647988644"
   integrity sha512-yBbx6pAzo78V/6Z004KXNoC1w6kW/ttm/FF02s9LnOwTDYcOP7tn97YlgO+hyeMsk4Xld5GrjJ5lZI/ss8qaug==
@@ -45,7 +50,7 @@
     "@carbon/telemetry" "0.1.0"
     prop-types "^15.7.2"
 
-"@carbon/layout@^11.15.0", "@carbon/layout@^11.16.1":
+"@carbon/layout@^11.11.0", "@carbon/layout@^11.16.1":
   version "11.16.1"
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-11.16.1.tgz#63a7dcfa622865ff5e82157717bf39d384716cba"
   integrity sha512-uUJmNrB7GKJzR/ZEzVxqGNb7US8UB1jL0X3lia3pnyqQ8Rcxq3y1RNmj/bfuI6LWC9GA0lLrsKRdKOpdLyqJMQ==
@@ -55,16 +60,16 @@
   resolved "https://registry.yarnpkg.com/@carbon/motion/-/motion-11.13.1.tgz#e3c2d3f00b45ad6e7e9fd5d548f2e0191d51c0cc"
   integrity sha512-ohpfl9qVCEZzvr6cqDDEskqeTS797FSCLqADwZufbLjOBcUlRr2mq1rftTJcizLdNXutODvmFt0LJOGDOENHZg==
 
-"@carbon/react@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.32.0.tgz#d950a15fdd17114a9cfcac5f088e67353181735c"
-  integrity sha512-4gkoLttKNwHQr+4Tvidik3YP4Tsotp74g17bzTSaVulvpwl+tv6Y3aTYXB1c2FCPmSId1A8f+2LKnPAU5o8PyQ==
+"@carbon/react@1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.21.0.tgz#aeb3b210fbfa1492a4fce318e0d184474c7f34a0"
+  integrity sha512-NEMOfpOPkFOLI6l+qUKRac1Bl+VGtR5otRp8KBnxyzTIAYzBeu23BDdrS8hgGA6rc2BjhhDyDJ9gwDz0WtU1+g==
   dependencies:
     "@babel/runtime" "^7.18.3"
-    "@carbon/feature-flags" "^0.15.0"
-    "@carbon/icons-react" "^11.21.0"
-    "@carbon/layout" "^11.15.0"
-    "@carbon/styles" "^1.32.0"
+    "@carbon/feature-flags" "^0.12.0"
+    "@carbon/icons-react" "^11.15.0"
+    "@carbon/layout" "^11.11.0"
+    "@carbon/styles" "^1.21.0"
     "@carbon/telemetry" "0.1.0"
     classnames "2.3.2"
     copy-to-clipboard "^3.3.1"
@@ -77,12 +82,12 @@
     lodash.omit "^4.5.0"
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
-    react-is "^18.2.0"
+    react-is "^17.0.2"
     use-resize-observer "^6.0.0"
     wicg-inert "^3.1.1"
     window-or-global "^1.0.1"
 
-"@carbon/styles@^1.32.0":
+"@carbon/styles@^1.21.0":
   version "1.33.1"
   resolved "https://registry.yarnpkg.com/@carbon/styles/-/styles-1.33.1.tgz#996946c236e49c91e04d0d9bc12291219d26116c"
   integrity sha512-KnccrmaFTVLVvtvietjGD1UcelMur5JHpVAcWt1Qsk+XsgLgJ3tPU4Rf13sTz9wo0B7fP7AGlpVstWV/W+6r9Q==
@@ -2071,10 +2076,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-is@^18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
-  integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+react-is@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 react@18.2.0:
   version "18.2.0"

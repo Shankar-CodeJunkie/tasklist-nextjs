@@ -43,3 +43,67 @@ body {
   color: $border-interactive;
   margin-top: 2vh;
 }
+
+.create-button {
+  position: relative;
+  border-radius: 1rem;
+  margin-bottom: 2vh;
+  border-radius: 2vh;
+  margin: 2vh;
+}
+
+.cra-datepicker {
+  .cds--date-picker.cds--date-picker--single .cds--date-picker__input {
+    width: 16rem!important;
+  }
+}
+
+
+.subtasks .cds--text-input--sm {
+  height: 1.5rem;
+  //width: 32.7rem;
+  margin-right: 0.8rem;
+}
+
+.subtasks .cds--form-item.cds--checkbox-wrapper {
+  //position: fixed !important;
+  position: relative;
+  margin-bottom: 0.25rem;
+  flex: 0.1;
+  padding-right: 1vh
+}
+
+.subtasks-icon {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.trash-icon {
+  color: react.$red-50;
+  margin-left: '70px';
+  margin-top: 2vh;
+}
+
+.subtasks-count {
+  margin-left: -3vh;
+}
+
+.subtask-hr-line {
+  margin-left: -0.1vh;
+  margin-right: -3.0vh;
+}
+
+.page-header {
+  @include type-style('productive-heading-05');
+  margin: 1vh;
+  border-radius: 2vh;
+  color: cds--text-01;
+}
+
+.outer-tile {
+  border-radius: 1vh;
+  background-color: $layer-01;
+  margin: 2vh;
+  padding: 2vh;
+  color: cds--text-01;
+}

@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { Tile } from "@carbon/react";
+import EditTask from "./editTask";
 //import '../scss/styles.scss';
 //import '../scss/page.module.css'
 
@@ -15,8 +16,26 @@ type taskItem = {
 
 
 const TaskItem = (props:any) => {
+    const {updateTask } = props
+    const [editModal, toggleEditModal] = useState(false);
+
+    const editTask = () => {
+        toggleEditModal(true)
+    }
+
+    const sendDataToEditModal = () => {
+        toggleEditModal(false)
+    }
+
+    const handleSubmit = (props:any) => {
+        console.log('handlesubmit props', props)
+        updateTask(props);
+        toggleEditModal(false);
+    }
+
     return (
-        <Tile className={"individual-task"} >
+        <>
+        <Tile className={"individual-task"} onClick={editTask} >
 
            <div className="title">
              {props.props.name}
@@ -30,6 +49,17 @@ const TaskItem = (props:any) => {
            </div>
 
         </Tile>
+
+        {editModal ?
+            <EditTask status={editModal}
+                taskObject={props.props}
+                sendDataToEditModal={sendDataToEditModal}
+                handleSubmit={handleSubmit}
+                 />
+            :
+            <></>
+        }
+        </>
     )
 }
 
