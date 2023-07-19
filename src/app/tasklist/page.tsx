@@ -138,7 +138,7 @@ export default function TaskList() {
                        {
                           tasks.filter(x => x.taskStatus === 'InProgress')
                           .map((x, index) => {
-                            return <TaskItem props={x} key={index} updateTask={updateTask}  />
+                            return <TaskItem props={x} key={index} updateTask={updateTask} deleteTask={deleteTask} />
                           })
                        }
                    </div>
@@ -152,7 +152,7 @@ export default function TaskList() {
                        {
                           tasks.filter(x => x.taskStatus === 'Backlog')
                           .map((x, index) => {
-                            return <TaskItem props={x} key={index} updateTask={updateTask} />
+                            return <TaskItem props={x} key={index} updateTask={updateTask} deleteTask={deleteTask} />
                           })
                        }
                    </div>
@@ -165,7 +165,7 @@ export default function TaskList() {
                        {
                           tasks.filter(x => x.taskStatus === 'Closed')
                           .map((x, index) => {
-                            return <TaskItem props={x} key={index} updateTask={updateTask} />
+                            return <TaskItem props={x} key={index} updateTask={updateTask} deleteTask={deleteTask}/>
                           })
                        }
                    </div>
