@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import { Tile } from "@carbon/react";
+import { Tile, Grid, Column } from "@carbon/react";
 import EditTask from "./editTask";
+import { TrashCan } from "@carbon/icons-react";
 //import '../scss/styles.scss';
 //import '../scss/page.module.css'
 
@@ -16,7 +17,7 @@ type taskItem = {
 
 
 const TaskItem = (props:any) => {
-    const {updateTask } = props
+    const {updateTask, deleteTask } = props
     const [editModal, toggleEditModal] = useState(false);
 
     const editTask = () => {
@@ -34,19 +35,35 @@ const TaskItem = (props:any) => {
     }
 
     return (
-        <>
-        <Tile className={"individual-task"} onClick={editTask} >
+       <>
+        <Tile className={"individual-task"}  >
+             <Grid>
+                <Column lg={4} md={4} sm={4} onClick={editTask}>
 
-           <div className="title">
-             {props.props.name}
+                    <div className="title">
+                        {props.props.name}
 
-           </div>
+                    </div>
 
-           <hr  style={{marginTop: '5vh'}} />
+                    <hr style={{ marginTop: '5vh' }} />
 
-           <div className='dueBy'>
-            {props.props.dueBy}
-           </div>
+                    
+                </Column>
+                <Column lg={3} md={3} sm={3} onClick={editTask}>
+                <div className='dueBy'>
+                        {props.props.dueBy}
+                    </div>
+                </Column>
+                <Column lg={1} md={1} sm={1}>
+                <div className='delete-task'>
+                        <TrashCan size={20} onClick={() => {
+                            deleteTask(props.props._id)
+
+                        }} />
+                </div>
+                </Column>
+                </Grid>
+
 
         </Tile>
 

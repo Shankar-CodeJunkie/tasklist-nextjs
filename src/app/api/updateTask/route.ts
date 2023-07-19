@@ -7,7 +7,7 @@ export async function PUT (request:NextRequest, response:NextResponse) {
     const requestData = await request.json();
 
     const updateRequest = await updateTask(requestData);
-    console.log('updateRequest-response', updateRequest );
+    //console.log('updateRequest-response', updateRequest );
     return NextResponse.json({body:updateRequest})
 
 }

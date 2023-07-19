@@ -44,6 +44,11 @@ body {
   margin-top: 2vh;
 }
 
+.individual-task .delete-task {
+  color: react.$red-50;
+  margin-top: 2vh;
+}
+
 .create-button {
   position: relative;
   border-radius: 1rem;

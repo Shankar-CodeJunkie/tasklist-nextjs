@@ -75,6 +75,21 @@ export default function TaskList() {
         updateTask();
     }
 
+    const deleteTask = (props:any) => {
+        console.log('delete item', props);
+        const requestOptions = {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(props)
+        }
+        async function deleteTask() {
+            const deleteRequest:Response = await fetch('/api/deleteTask', requestOptions);
+            const deleteResponse:any = await deleteRequest.json();
+            getTasks(deleteResponse.body)
+        }
+        deleteTask()
+    }
+
     
 
     return (
@@ -104,7 +119,7 @@ export default function TaskList() {
                             {
                                tasks.filter(x => x.taskStatus === 'New')
                                .map((x, index) => {
-                                 return <TaskItem props={x} key={index} updateTask={updateTask}/>
+                                 return <TaskItem props={x} key={index} updateTask={updateTask} deleteTask={deleteTask}/>
                                })
                             }
                             
