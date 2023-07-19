@@ -3,7 +3,7 @@ import {
     Row,
     Modal,
     ModalHeader, ModalBody, Grid, TextInput, Column, DatePicker, DatePickerInput, Dropdown, TextArea, Checkbox} from "@carbon/react";
-import {Add, TrashCan} from '@carbon/icons-react'
+import {Add, TrashCan} from '@carbon/icons-react';
 
 
 const EditTask = ({...props}) => {
@@ -37,12 +37,12 @@ const EditTask = ({...props}) => {
                                 id="text-input-1"
                                 labelText="Task Name"
                                 defaultValue={taskObject.name}
-                                onChange={(e) => dispatch({ type: 'name', value: e.target.value })}
+                                onChange={(e:React.ChangeEvent<HTMLInputElement>) => dispatch({ type: 'name', value: e.target.value })}
                             />
                         </Column>
                         <Column lg={2} md={4} sm={4}>
                             <div className={'cra-datepicker'}>
-                                <DatePicker size={'sm'} datePickerType={'single'} dateFormat={'m/d/Y'} onChange={(e) => {
+                                <DatePicker size={'sm'} datePickerType={'single'} dateFormat={'m/d/Y'} onChange={(e:any) => {
                                     let date = new Date(e);
                                     let date1 = date.toLocaleString('en-GB', {
                                         day: "numeric",
@@ -76,7 +76,7 @@ const EditTask = ({...props}) => {
                                 initialSelectedItem={taskObject.taskStatus}
                                 titleText="Status"
                                 direction={'bottom'}
-                                onChange={(e) => {
+                                onChange={(e:any) => {
                                     dispatch({ type: 'taskStatus', value: e.selectedItem })
                                 }}
                             />
@@ -86,7 +86,7 @@ const EditTask = ({...props}) => {
 
                             <legend className={'cds--label'}>Sub Tasks</legend>
 
-                            <Add label={'add'} style={{ float: 'left' }} size={16} text={'add'} onClick={() => {
+                            <Add  style={{ float: 'left' }} size={16}  onClick={() => {
                                 updateSubTaskCount([...subtaskCounts, ''])
                                 //dispatch({type:'subTasks', value: 'placeholder'})
 
@@ -111,7 +111,7 @@ const EditTask = ({...props}) => {
                                 helperText={'Insert your notes here'}
                                 rows={4}
                                 defaultValue={taskObject.notesSection}
-                                onChange={(e) => dispatch({ type: 'notes', value: e.target.value })}
+                                onChange={(e:React.ChangeEvent<HTMLInputElement>) => dispatch({ type: 'notes', value: e.target.value })}
                             />
                         </Column>
                     </Grid>
@@ -135,8 +135,8 @@ const CreateCheckBox = ({...props}) => {
                     <div >
                         {subtaskEntries.map((item:any, index:any) => {
                             return (
-                                <div className={'subtasks'} id={index} style={{ display: 'flex' }}>
-                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { checked:boolean, id:any }) => {
+                                <div className={'subtasks'} key={index} id={index} style={{ display: 'flex' }}>
+                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { /*checked:boolean, id:any*/ }) => {
                                         //updateTaskStatus(index, checked)
                                     }} />
                                     <TextInput

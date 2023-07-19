@@ -19,10 +19,10 @@
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-11.17.1.tgz#3aba3b495b3d4a635fa2bd1e6f16996163a92d62"
   integrity sha512-Q2VlMaZcl3U9Qc1RQbhuf4M4SVuJIeE+NIIDExPCRFaWeuN/5EIUYxEkPgDqvkLU91QTu6lH8TqxFPZORlRvDA==
 
-"@carbon/feature-flags@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.12.0.tgz#5833161a4449541113d416708967eae4e12ce6cf"
-  integrity sha512-7jspPbQNk//S787QDtDI/jAGEt2MKc0aHJEQ32UFXXNb8hIr/VpVQTTu7OZoUiSF23F3Dsnr4HcEXsj6Nq9Ikw==
+"@carbon/feature-flags@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@carbon/feature-flags/-/feature-flags-0.11.0.tgz#66a115dd76c1c75272d61665b8c85ec3ca4aea78"
+  integrity sha512-5sQ/qrR5N7/uNI2Pj0PjN/tc93Dcy8cKV4p/jxXAmhGGaWgOYetjwKYUrHBX4RoFRqzM3gn0iAyrwC77hBX7rA==
 
 "@carbon/feature-flags@^0.15.0":
   version "0.15.0"
@@ -41,7 +41,7 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.42.1.tgz#066fbf6e282ed710305009ee38bfdc8b292f0685"
   integrity sha512-LsXHvoi/RAxYQz1GC7Ae7WOwJE4HKOXYmSOWuDEtSEW94Adz/1w968pje/7Gfr7nsJ/GcP6lNcQoSpYq9iDSpQ==
 
-"@carbon/icons-react@^11.15.0", "@carbon/icons-react@^11.22.1":
+"@carbon/icons-react@^11.14.0", "@carbon/icons-react@^11.22.1":
   version "11.22.1"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-11.22.1.tgz#bc3e88d202219336fc60f50d8f45ea0647988644"
   integrity sha512-yBbx6pAzo78V/6Z004KXNoC1w6kW/ttm/FF02s9LnOwTDYcOP7tn97YlgO+hyeMsk4Xld5GrjJ5lZI/ss8qaug==
@@ -50,7 +50,7 @@
     "@carbon/telemetry" "0.1.0"
     prop-types "^15.7.2"
 
-"@carbon/layout@^11.11.0", "@carbon/layout@^11.16.1":
+"@carbon/layout@^11.10.0", "@carbon/layout@^11.16.1":
   version "11.16.1"
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-11.16.1.tgz#63a7dcfa622865ff5e82157717bf39d384716cba"
   integrity sha512-uUJmNrB7GKJzR/ZEzVxqGNb7US8UB1jL0X3lia3pnyqQ8Rcxq3y1RNmj/bfuI6LWC9GA0lLrsKRdKOpdLyqJMQ==
@@ -60,16 +60,16 @@
   resolved "https://registry.yarnpkg.com/@carbon/motion/-/motion-11.13.1.tgz#e3c2d3f00b45ad6e7e9fd5d548f2e0191d51c0cc"
   integrity sha512-ohpfl9qVCEZzvr6cqDDEskqeTS797FSCLqADwZufbLjOBcUlRr2mq1rftTJcizLdNXutODvmFt0LJOGDOENHZg==
 
-"@carbon/react@1.21.0":
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.21.0.tgz#aeb3b210fbfa1492a4fce318e0d184474c7f34a0"
-  integrity sha512-NEMOfpOPkFOLI6l+qUKRac1Bl+VGtR5otRp8KBnxyzTIAYzBeu23BDdrS8hgGA6rc2BjhhDyDJ9gwDz0WtU1+g==
+"@carbon/react@1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@carbon/react/-/react-1.20.0.tgz#e5fe8c3463505555414843c5854892e62fb4c0aa"
+  integrity sha512-40lWGhnI8Rn88ouolGJKZ5GITXzAxUEWNM3C/nkft6Il6g2cXUNHY6zrqjVIsgX+3xWgQRmF3ieQTeU4FxxvKg==
   dependencies:
     "@babel/runtime" "^7.18.3"
-    "@carbon/feature-flags" "^0.12.0"
-    "@carbon/icons-react" "^11.15.0"
-    "@carbon/layout" "^11.11.0"
-    "@carbon/styles" "^1.21.0"
+    "@carbon/feature-flags" "^0.11.0"
+    "@carbon/icons-react" "^11.14.0"
+    "@carbon/layout" "^11.10.0"
+    "@carbon/styles" "^1.20.0"
     "@carbon/telemetry" "0.1.0"
     classnames "2.3.2"
     copy-to-clipboard "^3.3.1"
@@ -87,7 +87,7 @@
     wicg-inert "^3.1.1"
     window-or-global "^1.0.1"
 
-"@carbon/styles@^1.21.0":
+"@carbon/styles@^1.20.0":
   version "1.33.1"
   resolved "https://registry.yarnpkg.com/@carbon/styles/-/styles-1.33.1.tgz#996946c236e49c91e04d0d9bc12291219d26116c"
   integrity sha512-KnccrmaFTVLVvtvietjGD1UcelMur5JHpVAcWt1Qsk+XsgLgJ3tPU4Rf13sTz9wo0B7fP7AGlpVstWV/W+6r9Q==
@@ -281,6 +281,11 @@
   integrity sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==
   dependencies:
     tslib "^2.4.0"
+
+"@types/carbon__icons-react@^11.20.0":
+  version "11.20.0"
+  resolved "https://registry.yarnpkg.com/@types/carbon__icons-react/-/carbon__icons-react-11.20.0.tgz#c179d73d3db17e293e54ca568c8401fe57f72188"
+  integrity sha512-tGRW9rtEjOdh2puC1ltQ5LYqeL/fjqkYAuvCLkxuEO/8sh0dVhHqbLySvCzlH62304/r6Cw8ugW3484p52PJhA==
 
 "@types/json5@^0.0.29":
   version "0.0.29"

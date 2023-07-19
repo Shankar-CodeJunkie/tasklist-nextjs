@@ -59,7 +59,7 @@ const CreateTask = ({...props}) => {
 
                         <Column lg={2} md={4} sm={4}>
                         <DatePicker  defaultValue={Date.now()}
-                                    size="sm" dateFormat="m/d/Y" datePickerType="single" onChange={(e) => {
+                                    size="sm" dateFormat="m/d/Y" datePickerType="single" onChange={(e:any) => {
                                         let date = new Date(e);
                                         let date1 = date.toLocaleString('en-GB', {
                                             day: "numeric",
@@ -90,7 +90,7 @@ const CreateTask = ({...props}) => {
                                 titleText="Status"
                                 direction={'bottom'}
                                 itemToString={(item:any) => item}
-                                onChange={(e:React.ChangeEvent<HTMLInputElement>) => dispatch({ type: 'taskStatus', value: e.selectedItem })}
+                                onChange={(e:any) => dispatch({ type: 'taskStatus', value: e.selectedItem })}
 
                             />
 
@@ -106,7 +106,7 @@ const CreateTask = ({...props}) => {
                                 <div onClick={() => {
 
                                 }} >
-                                    <Add label={'add'} style={{ float: 'left' }} size={16} text={'add'} onClick={() => {
+                                    <Add size={16}  style={{ float: 'left' }}  onClick={() => {
                                         updateSubTaskCount([...subtaskCounts, ''])
                                         //dispatch({type:'subTasks', value: 'placeholder'})
 
@@ -159,8 +159,8 @@ const CreateCheckBox = ({...props}) => {
                     <div >
                         {subtaskEntries.map((item:any, index:any) => {
                             return (
-                                <div className={'subtasks'} id={index} style={{ display: 'flex' }}>
-                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { checked:boolean, id:any }) => {
+                                <div className={'subtasks'} key={index} id={index} style={{ display: 'flex' }}>
+                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { /*checked:any, id:any*/ }) => {
                                         //updateTaskStatus(index, checked)
                                     }} />
                                     <TextInput
