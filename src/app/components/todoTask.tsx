@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Tile, Grid, Column } from "@carbon/react";
 import EditTask from "./editTask";
-import { TrashCan } from "@carbon/icons-react";
+import { TrashCan, Calendar } from "@carbon/icons-react";
 //import '../scss/styles.scss';
 //import '../scss/page.module.css'
 
@@ -49,7 +49,16 @@ const TaskItem = (props:any) => {
 
                     
                 </Column>
-                <Column lg={3} md={3} sm={3} onClick={editTask}>
+                <Column lg={1} md={2} sm={1} className={'cds--grid--condensed'}>
+                      <div className="calendarIcon">
+                      <Calendar size={20} />
+                      </div>
+                      <div className='dueByText'>
+                      Due
+                      </div>
+                      
+                </Column>
+                <Column lg={2} md={2} sm={2} onClick={editTask}>
                 <div className='dueBy'>
                         {props.props.dueBy}
                     </div>

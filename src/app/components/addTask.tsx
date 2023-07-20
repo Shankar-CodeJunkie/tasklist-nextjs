@@ -28,6 +28,32 @@ const CreateTask = ({...props}) => {
 
     const [modalState, dispatch] = useReducer(reducer, initialState);
 
+    const removeSubtasks = (index:number) => {
+        let arr1 = subtaskCounts.slice(0, index);
+        let arr2 = subtaskCounts.slice(index + 1);
+        let arr3 = [...arr1, ...arr2];
+        updateSubTaskCount(arr3);
+        dispatch({ type: 'subTasks', value: arr3 });
+    };
+
+    const addSubtasks = (index:number, item:any) => {
+        console.log('coming to add an item', subtaskCounts)
+        subtaskCounts[index] = item;
+        updateSubTaskCount([...subtaskCounts])
+        dispatch({ type: 'subTasks', value: subtaskCounts })
+    }
+
+    const updateTaskStatus = (index:number, newStatus:any) => {
+        //TODO: refactor this one, bad way of updating
+        let oldKey = { ...subtaskCounts[index], status: newStatus }
+        let arr1 = subtaskCounts.slice(0, index);
+        let arr2 = subtaskCounts.slice(index);
+        let arr3 = [...arr1, ...arr2];
+        arr3[index] = oldKey;
+        updateSubTaskCount([...subtaskCounts])
+        dispatch({ type: 'subTasks', value: arr3 })
+    }
+
 
     return (
         <>
@@ -121,9 +147,9 @@ const CreateTask = ({...props}) => {
                         <Column lg={4} md={4} sm={4}>
                             {
                                 <CreateCheckBox subtaskEntries={subtaskCounts}
-                                    //addSubtasks={addSubtasks}
-                                    //removeSubtasks={removeSubtasks}
-                                    //updateTaskStatus={updateTaskStatus}
+                                    addSubtasks={addSubtasks}
+                                    removeSubtasks={removeSubtasks}
+                                    updateTaskStatus={updateTaskStatus}
                                 />
                             }
                         </Column>
@@ -160,8 +186,8 @@ const CreateCheckBox = ({...props}) => {
                         {subtaskEntries.map((item:any, index:any) => {
                             return (
                                 <div className={'subtasks'} key={index} id={index} style={{ display: 'flex' }}>
-                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { /*checked:any, id:any*/ }) => {
-                                        //updateTaskStatus(index, checked)
+                                    <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { ...props }) => {
+                                        updateTaskStatus(index, props.checked)
                                     }} />
                                     <TextInput
                                         id={index} labelText={''}

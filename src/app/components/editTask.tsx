@@ -35,7 +35,7 @@ const EditTask = ({...props}) => {
         let arr2 = subtaskCounts.slice(index);
         let arr3 = [...arr1, ...arr2];
         arr3[index] = oldKey;
-        //updateSubTaskCount([...subtaskCounts])
+        updateSubTaskCount([...subtaskCounts])
         dispatch({ type: 'subTasks', value: arr3 })
 
     }
@@ -165,6 +165,7 @@ const CreateCheckBox = ({...props}) => {
                             return (
                                 <div className={'subtasks'} key={index} id={index} style={{ display: 'flex' }}>
                                     <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { ...props }) => {
+                                        console.log('yes changing checkbox')
                                         updateTaskStatus(index, props.checked)
                                     }} />
                                     <TextInput
