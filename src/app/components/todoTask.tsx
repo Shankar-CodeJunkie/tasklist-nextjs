@@ -54,7 +54,7 @@ const TaskItem = (props:any) => {
                       <Calendar size={20} />
                       </div>
                       <div className='dueByText'>
-                      Due
+                      DueBy
                       </div>
                       
                 </Column>
