@@ -6,6 +6,8 @@
 @use '~@carbon/react/scss/spacing' as *;
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/colors' as *;
+@use '@carbon/grid';
+@include grid.flex-grid();
 
 body {
   //background: colors.$blue-50;
@@ -47,7 +49,8 @@ body {
 
 .individual-task .calendarIcon {
   margin-top: 2vh;
-  padding-left: -2vh;
+  margin-left: 1vh;
+  color: react.$green-60
 }
 
 .individual-task .dueByText {
@@ -55,7 +58,6 @@ body {
   margin-right: 2vh;
   padding-left: 3vh;
   border-right: 0vh;
-  margin-left: 0vh;
   border-left: ovh;
   @media screen and (max-width: 600px){
     margin-top: -3vh;
@@ -68,6 +70,16 @@ body {
 .individual-task .delete-task {
   color: react.$red-50;
   margin-top: 2vh;
+  //padding-right:3vh;
+  margin-left: 3vh;
+}
+
+.individual-task .subtask {
+  margin-top: 4vh;
+}
+
+.individual-task .subtask-count {
+  margin-top: 4vh;
 }
 
 .create-button {
@@ -80,7 +92,7 @@ body {
 
 .cra-datepicker {
   .cds--date-picker.cds--date-picker--single .cds--date-picker__input {
-    width: 16rem!important;
+    //width: 16rem!important;
   }
 }
 

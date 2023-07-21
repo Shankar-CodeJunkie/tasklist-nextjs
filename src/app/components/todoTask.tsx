@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import { Tile, Grid, Column } from "@carbon/react";
+import React, { useState } from "react";
+import { Tile, Grid, Column, ColumnHang } from "@carbon/react";
 import EditTask from "./editTask";
-import { TrashCan, Calendar } from "@carbon/icons-react";
+import { TrashCan, Calendar, DecisionTree, ExpandAll } from "@carbon/icons-react";
 //import '../scss/styles.scss';
 //import '../scss/page.module.css'
 
@@ -16,8 +16,8 @@ type taskItem = {
 }
 
 
-const TaskItem = (props:any) => {
-    const {updateTask, deleteTask } = props
+const TaskItem = (props: any) => {
+    const { updateTask, deleteTask } = props
     const [editModal, toggleEditModal] = useState(false);
 
     const editTask = () => {
@@ -28,63 +28,102 @@ const TaskItem = (props:any) => {
         toggleEditModal(false)
     }
 
-    const handleSubmit = (props:any) => {
+    const handleSubmit = (props: any) => {
         console.log('handlesubmit props', props)
         updateTask(props);
         toggleEditModal(false);
     }
 
     return (
-       <>
-        <Tile className={"individual-task"}  >
-             <Grid>
-                <Column lg={4} md={4} sm={4} onClick={editTask}>
+        <>
+            <Tile className={"individual-task"}  >
+                <Grid>
+                    <Column lg={4} md={8} sm={4} onClick={editTask}>
 
-                    <div className="title">
-                        {props.props.name}
+                        <div className="title">
+                            {props.props.name}
 
-                    </div>
+                        </div>
 
-                    <hr style={{ marginTop: '5vh' }} />
+                    </Column>
 
-                    
-                </Column>
-                <Column lg={1} md={2} sm={1} className={'cds--grid--condensed'}>
-                      <div className="calendarIcon">
-                      <Calendar size={20} />
-                      </div>
-                      <div className='dueByText'>
-                      DueBy
-                      </div>
-                      
-                </Column>
-                <Column lg={2} md={2} sm={2} onClick={editTask}>
-                <div className='dueBy'>
-                        {props.props.dueBy}
-                    </div>
-                </Column>
-                <Column lg={1} md={1} sm={1}>
-                <div className='delete-task'>
-                        <TrashCan size={20} onClick={() => {
-                            deleteTask(props.props._id)
+                    <Column lg={4} md={8} sm={4}>
+                        <Grid>
+                            <Column lg={1} md={1} sm={1}>
 
-                        }} />
-                </div>
-                </Column>
+                                <ExpandAll size={20} className={'subtask'} />
+
+                            </Column>
+                            <Grid narrow condensed>
+                                <Column lg={3} md={3} sm={3} style={{ 'borderRight': 'auto' }}>
+
+                                    <div className="subtask-count">
+                                        {
+                                            props.props.subTasks
+                                                .filter((item: any) => item.status === true)
+                                                .length
+                                        }/{props.props.subTasks.length}
+                                    </div>
+
+                                </Column>
+
+                            </Grid>
+
+                        </Grid>
+
+                    </Column>
+
+                    <Column lg={4} md={8} sm={4}>
+                        <hr style={{ marginTop: '5vh' }} />
+                    </Column>
+
+                    <Column lg={4} md={8} sm={4}>
+                        <Grid narrow>
+                            <ColumnHang lg={1} md={1} sm={1}>
+                                <Calendar className={"calendarIcon"} size={20} />
+
+                            </ColumnHang>
+
+                            <Column lg={1} md={1} sm={1}>
+                                <div className='dueBy'>
+                                    Due By
+                                </div>
+
+                            </Column>
+
+                            <ColumnHang lg={2} md={2} sm={2} style={{ 'marginLeft': 'auto' }} onClick={editTask}>
+
+                                <div className='dueBy'>
+                                    {props.props.dueBy}
+                                </div>
+                            </ColumnHang>
+                            <Column lg={1} md={1} sm={1}>
+                                <div className='delete-task'>
+                                    <TrashCan size={20} onClick={() => {
+                                        deleteTask(props.props._id)
+
+                                    }} />
+                                </div>
+                            </Column>
+
+
+                        </Grid>
+                    </Column>
+
                 </Grid>
 
 
-        </Tile>
+            </Tile>
 
-        {editModal ?
-            <EditTask status={editModal}
-                taskObject={props.props}
-                sendDataToEditModal={sendDataToEditModal}
-                handleSubmit={handleSubmit}
-                 />
-            :
-            <></>
-        }
+            {editModal ?
+                <EditTask status={editModal}
+                    taskObject={props.props}
+                    sendDataToEditModal={sendDataToEditModal}
+                    handleSubmit={handleSubmit}
+                />
+                :
+                <></>
+            }
         </>
     )
 }
