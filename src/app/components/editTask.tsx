@@ -109,6 +109,16 @@ const EditTask = ({...props}) => {
                             />
                         </Column>
 
+                        <Column lg={4} md={8} sm={4}>
+                        <TextInput
+                                data-modal-primary-focus
+                                id="text-input-1"
+                                labelText="Tags"
+                                defaultValue={taskObject.tags}
+                                onChange={(e:React.ChangeEvent<HTMLInputElement>) => dispatch({ type: 'tags', value: e.target.value })}
+                            />
+                        </Column>
+
                         <Column lg={4} md={4} sm={4}>
 
                             <legend className={'cds--label'}>Sub Tasks</legend>
@@ -121,6 +131,8 @@ const EditTask = ({...props}) => {
 
                             <legend className={'cds--label'}>Add Sub-Tasks</legend>
                         </Column>
+
+                       
 
                         <Column lg={4} md={4} sm={4}>
                             {
@@ -224,6 +236,13 @@ function reducer(modalState:any, action:any) {
             return {
                 ...modalState,
                 subTasks: arr
+            }
+        }
+        case 'tags': {
+            let tags = [...action.value]
+            return {
+                ...modalState,
+                tags: action.value
             }
         }
         case 'timestamp': {

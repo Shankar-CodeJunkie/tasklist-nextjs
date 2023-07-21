@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tile, Grid, Column, ColumnHang } from "@carbon/react";
+import { Tile, Grid, Column, ColumnHang, Tag } from "@carbon/react";
 import EditTask from "./editTask";
 import { TrashCan, Calendar, DecisionTree, ExpandAll } from "@carbon/icons-react";
 //import '../scss/styles.scss';
@@ -45,6 +45,18 @@ const TaskItem = (props: any) => {
 
                         </div>
 
+                    </Column>
+
+                    <Column lg={4} md={8} sm={4} >
+                        {}
+                       {
+                        props.props.tags?.split(',').map((x:any, index:number) => {
+                            console.log(x);
+                            return (
+                                <Tag type='red' key={index}>{x}</Tag>
+                            )
+                        })
+                       }
                     </Column>
 
                     <Column lg={4} md={8} sm={4}>
