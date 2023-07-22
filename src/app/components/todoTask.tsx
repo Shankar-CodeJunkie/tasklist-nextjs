@@ -91,7 +91,7 @@ const TaskItem = (props: any) => {
 
                     <Column lg={4} md={8} sm={4} >
                         <Grid narrow>
-                            <Column lg={1} md={3} sm={3} >
+                            <Column lg={1} md={1} sm={1} >
                                 <Calendar className={"calendarIcon"} size={20} />
                                 <div style={{float:'right'}}>
                                     Due
