@@ -85,30 +85,27 @@ const TaskItem = (props: any) => {
 
                     </Column>
 
-                    <Column lg={4} md={8} sm={4}>
-                        <hr style={{ marginTop: '5vh' }} />
+                    <Column lg={4} md={8} sm={4} style={{margin:'1vh'}}>
+                        <hr  />
                     </Column>
 
-                    <Column lg={4} md={8} sm={4}>
+                    <Column lg={4} md={8} sm={4} >
                         <Grid narrow>
-                            <ColumnHang lg={1} md={1} sm={1}>
+                            <Column lg={1} md={3} sm={3} >
                                 <Calendar className={"calendarIcon"} size={20} />
+                                <div style={{float:'right'}}>
+                                    Due
 
-                            </ColumnHang>
-
-                            <Column lg={1} md={1} sm={1}>
-                                <div className='dueBy'>
-                                    Due By
                                 </div>
-
                             </Column>
 
-                            <ColumnHang lg={2} md={2} sm={2} style={{ 'marginLeft': 'auto' }} onClick={editTask}>
+                            <Column lg={2} md={2} sm={2} onClick={editTask}>
 
                                 <div className='dueBy'>
                                     {props.props.dueBy}
                                 </div>
-                            </ColumnHang>
+                            </Column>
+
                             <Column lg={1} md={1} sm={1}>
                                 <div className='delete-task'>
                                     <TrashCan size={20} onClick={() => {
@@ -117,7 +114,6 @@ const TaskItem = (props: any) => {
                                     }} />
                                 </div>
                             </Column>
-
 
                         </Grid>
                     </Column>
