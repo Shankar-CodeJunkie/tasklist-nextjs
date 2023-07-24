@@ -48,7 +48,6 @@ const TaskItem = (props: any) => {
                     </Column>
 
                     <Column lg={4} md={8} sm={4} >
-                        {}
                        {
                         props.props.tags?.split(',').map((x:any, index:number) => {
                             console.log(x);
@@ -66,7 +65,7 @@ const TaskItem = (props: any) => {
                                 <ExpandAll size={20} className={'subtask'} />
 
                             </Column>
-                            <Grid narrow condensed>
+                            <Grid >
                                 <Column lg={3} md={3} sm={3} style={{ 'borderRight': 'auto' }}>
 
                                     <div className="subtask-count">
