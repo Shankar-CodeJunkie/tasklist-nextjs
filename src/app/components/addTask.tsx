@@ -271,9 +271,10 @@ function reducer(modalState:any, action:any) {
             }
         }
         case 'tags': {
+            let tags = [...action.value]
             return {
                 ...modalState,
-                tags:''
+                tags: action.value
             }
         }
         default:

@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 const url = String(process.env.mongodburl);
 const client = new MongoClient(url);
-console.log(process.env.mongodburl);
+//console.log(process.env.mongodburl);
 import { NextResponse, NextRequest } from "next/server";
 
 import { NextApiRequest, NextApiResponse } from 'next'

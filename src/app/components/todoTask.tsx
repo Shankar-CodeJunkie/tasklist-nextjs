@@ -17,6 +17,7 @@ type taskItem = {
 
 
 const TaskItem = (props: any) => {
+   // console.log('creation', props)
     const { updateTask, deleteTask } = props
     const [editModal, toggleEditModal] = useState(false);
 
@@ -29,7 +30,7 @@ const TaskItem = (props: any) => {
     }
 
     const handleSubmit = (props: any) => {
-        console.log('handlesubmit props', props)
+        //console.log('handlesubmit props', props)
         updateTask(props);
         toggleEditModal(false);
     }
@@ -50,7 +51,7 @@ const TaskItem = (props: any) => {
                     <Column lg={4} md={8} sm={4} >
                        {
                         props.props.tags?.split(',').map((x:any, index:number) => {
-                            console.log(x);
+                            //console.log(x);
                             return (
                                 <Tag type='red' key={index}>{x}</Tag>
                             )
@@ -66,7 +67,7 @@ const TaskItem = (props: any) => {
 
                             </Column>
                             <Grid >
-                                <Column lg={3} md={3} sm={3} style={{ 'borderRight': 'auto' }}>
+                                <Column lg={3} md={3} sm={3} >
 
                                     <div className="subtask-count">
                                         {

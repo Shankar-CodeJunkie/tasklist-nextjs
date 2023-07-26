@@ -16,7 +16,8 @@ export async function addTask(taskDetails:any) {
         subTasks: taskDetails?.subTasks,
         taskStatus: taskDetails?.taskStatus,
         taskNotes: taskDetails?.notes,
-        timestamp: taskDetails?.timestamp
+        timestamp: taskDetails?.timestamp,
+        tags: taskDetails?.tags
       });
   return getTasks();
 }

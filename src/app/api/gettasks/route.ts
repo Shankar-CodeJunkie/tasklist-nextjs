@@ -8,7 +8,6 @@ import { getTasks } from "../mongodb";
 
 export async function GET(request: NextRequest, response: NextResponse) {
     // ...
-    console.log('yes coming', request.url);
     let data = await getTasks()
     return NextResponse.json({ body: data});
 }

@@ -22,7 +22,6 @@ const EditTask = ({...props}) => {
     };
 
     const addSubtasks = (index:number, item:any) => {
-        console.log('coming to add an item', subtaskCounts)
         subtaskCounts[index] = item;
         updateSubTaskCount([...subtaskCounts])
         dispatch({ type: 'subTasks', value: subtaskCounts })
@@ -163,7 +162,7 @@ const EditTask = ({...props}) => {
 }
 
 const CreateCheckBox = ({...props}) => {
-    console.log('coming to create check box', props)
+    //console.log('coming to create check box', props)
     const { subtaskEntries, addSubtasks, removeSubtasks, updateTaskStatus } = props;
     const [subtasks, updatesubtasks] = useState({ index: '', status: false, name: '' });
     const [subtaskStatus, checkSubTaskstatus] = useState(false);
@@ -177,7 +176,6 @@ const CreateCheckBox = ({...props}) => {
                             return (
                                 <div className={'subtasks'} key={index} id={index} style={{ display: 'flex' }}>
                                     <Checkbox labelText={''} id={index + 1} defaultChecked={item.status} onChange={(event:any, { ...props }) => {
-                                        console.log('yes changing checkbox')
                                         updateTaskStatus(index, props.checked)
                                     }} />
                                     <TextInput

@@ -39,12 +39,10 @@ export default function TaskList() {
     }, [])
 
     const sendStatusToParent = (props:any) => {
-        console.log('any')
         showModal(false)
     }
 
     const addTask = (props:any) => {
-        console.log('add', props);
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -61,7 +59,6 @@ export default function TaskList() {
     }
 
     const updateTask = (props:any) => {
-        console.log('udpating task', props);
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json'},
@@ -76,7 +73,6 @@ export default function TaskList() {
     }
 
     const deleteTask = (props:any) => {
-        console.log('delete item', props);
         const requestOptions = {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json'},
