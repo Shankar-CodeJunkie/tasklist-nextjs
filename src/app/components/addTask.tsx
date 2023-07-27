@@ -38,7 +38,7 @@ const CreateTask = ({...props}) => {
     };
 
     const addSubtasks = (index:number, item:any) => {
-        console.log('coming to add an item', subtaskCounts)
+        //console.log('coming to add an item', subtaskCounts)
         subtaskCounts[index] = item;
         updateSubTaskCount([...subtaskCounts])
         dispatch({ type: 'subTasks', value: subtaskCounts })

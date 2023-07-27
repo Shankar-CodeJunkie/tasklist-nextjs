@@ -90,12 +90,11 @@ const TaskItem = (props: any) => {
                     </Column>
 
                     <Column lg={4} md={8} sm={4} >
-                        <Grid narrow>
-                            <Column lg={1} md={1} sm={1} >
+                        <Grid>
+                            <Column lg={{span:1}} md={1} sm={1} >
                                 <Calendar className={"calendarIcon"} size={20} />
                                 <div style={{float:'right'}}>
                                     Due
-
                                 </div>
                             </Column>
 

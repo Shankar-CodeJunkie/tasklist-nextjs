@@ -79,6 +79,12 @@ body {
   margin-top: 4vh;
 }
 
+.individual-task {
+  .cds--subgrid--wide {
+    --cds-grid-gutter-end: 0rem;
+  }
+}
+
 .create-button {
   position: relative;
   border-radius: 1rem;
