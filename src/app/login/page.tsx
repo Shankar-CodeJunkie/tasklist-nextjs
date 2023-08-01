@@ -84,7 +84,8 @@ export default function Login() {
                         <div className={'app-description'}>
                             Task management is the link between planning to do something and getting it done.
                             Your task management software should provide an overview of work in progress that enables tracking from conception to completion.
-                            Let's get organized together!
+                            Let&apos;s get organized together&apos! Whether you&apos;re managing your next big project or digitalizing task management for your team&apos;s daily business, 
+                            you need to know who&apos;s doing what, when. MeisterTask helps you manage tasks in a beautiful, customizable environment that perfectly adapts to your needs.
                         </div>
                     </div>
                 </div>
