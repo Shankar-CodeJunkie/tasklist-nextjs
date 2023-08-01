@@ -90,7 +90,7 @@ export default function TaskList() {
 
     return (
         <div>
-            <Grid >
+            <Grid className={'task-page'}>
                 <Column lg={8} md={{span:4}} sm={4}>
                     <h1 >Hello Shankar</h1> 
                 </Column>
@@ -108,7 +108,9 @@ export default function TaskList() {
                     {
                         <Grid>
                             <Column lg={4} md={4} sm={4}>
+                               <Tile className={'new-task'}>
                                <h5>New</h5> 
+                               </Tile>
                             </Column>
                             
                             <Column lg={4} md={8} sm={4}>
@@ -130,7 +132,9 @@ export default function TaskList() {
                 <Column lg={4} md={8} sm={4}>
                 {
                        <div >
+                       <Tile className={'in-progress'}>
                        <h5>In-Progress</h5>
+                       </Tile>
                        {
                           tasks.filter(x => x.taskStatus === 'InProgress')
                           .map((x, index) => {
@@ -144,7 +148,9 @@ export default function TaskList() {
 
                 <Column lg={4} md={8} sm={4}>
                 <div >
+                       <Tile className={'backlog'}>
                        <h5>Backlog</h5>
+                       </Tile>
                        {
                           tasks.filter(x => x.taskStatus === 'Backlog')
                           .map((x, index) => {
@@ -157,7 +163,9 @@ export default function TaskList() {
 
                 <Column lg={4} md={8} sm={4}>
                 <div >
+                       <Tile className={'closed'}>
                        <h5>Closed</h5>
+                       </Tile>
                        {
                           tasks.filter(x => x.taskStatus === 'Closed')
                           .map((x, index) => {

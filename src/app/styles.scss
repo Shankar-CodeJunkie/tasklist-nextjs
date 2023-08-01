@@ -7,7 +7,9 @@
 @use '@carbon/react/scss/theme' as *;
 @use '@carbon/colors' as *;
 @use '@carbon/grid';
+@use '@carbon/type';
 @include grid.flex-grid();
+
 
 body {
   //background: colors.$blue-50;
@@ -25,6 +27,68 @@ body {
 
 [data-carbon-theme='g100'] {
   @include react.theme(react.$g100);
+}
+
+.login-page {
+  .app-header {
+      @include type.type-style('display-02', true)
+  }
+  .app-caption {
+    @include type-style('heading-01');
+    margin-left: 2vh;
+    color: react.$purple-50;
+  }
+  .sub-heading {
+    @include type.type-style('expressive-heading-04', true);
+    margin-top: 3vh;
+    color: react.$gray-50
+  }
+  .app-description {
+    @include type-style('body-01');
+  }
+  .sign-in {
+    background-color: react.$blue-50;
+    color: react.$white-0;
+    border-radius: 2vh;
+    margin-top:3vh;
+  }
+
+  .tile-header {
+    @include type-style('heading-compact-02');
+  }
+
+  .description-heading {
+    @include type.type-style('expressive-heading-04', true);
+    color: react.$gray-50
+  }
+  
+}
+.right-side {
+  margin: 5vh;
+}
+
+
+.task-page {
+  .new-task {
+    background-color: react.$green-30;
+    color: react.$white-0;
+    border-radius: 1vh;
+  }
+  .in-progress {
+    background-color: react.$magenta-60;
+    color: react.$white-0;
+    border-radius: 1vh;
+  }
+  .backlog {
+    background-color: react.$purple-50;
+    color: react.$white-0;
+    border-radius: 1vh;
+  }
+  .closed {
+    background-color: react.$red-50;
+    color: react.$white-0;
+    border-radius: 1vh;
+  }
 }
 
 .individual-task {

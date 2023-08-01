@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 const url = String(process.env.mongodburl);
 const client = new MongoClient(url);
-console.log(process.env.mongodburl);
+//console.log(process.env.mongodburl);
 
 
 
@@ -23,7 +23,7 @@ export async function addTask(taskDetails:any) {
 }
 
 export function getTasks() {
-  console.log('getting mongodb data ', process.env.mongodbname)
+  //console.log('getting mongodb data ', process.env.mongodbname)
   return client.db(process.env.mongodbname)
       .collection(String(process.env.mongodbview))
       .find({})
@@ -42,7 +42,7 @@ export async function updateTask(taskDetails:any) {
   if (updateDocument.acknowledged) {
     return getTasks();
   } else {
-    console.log(`${updateDocument}`)
+    //console.log(`${updateDocument}`)
   }
 }
 
@@ -51,6 +51,6 @@ export async function deleteTask(documentId:any) {
   let deletionRequest = await client.db(process.env.mongodbname)
       .collection(String(process.env.mongodbview))
       .deleteOne({_id: new ObjectId(documentId)})
-  console.log('deletionstates', deletionRequest)
+  //console.log('deletionstates', deletionRequest)
   return getTasks();
 }
