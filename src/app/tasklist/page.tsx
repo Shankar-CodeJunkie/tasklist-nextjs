@@ -91,12 +91,12 @@ export default function TaskList() {
     return (
         <div>
             <Grid className={'task-page'}>
-                <Column lg={8} md={{span:4}} sm={4}>
+                <Column lg={13} md={{span:6}} sm={4}>
                     <h1 >Hello Shankar</h1> 
                 </Column>
 
-                <Column lg={8} md={{span:4}} sm={4} >
-                            <Button className={"create-button"} onClick={() =>  {
+                <Column lg={{span:2}} md={{span:2}} sm={4} >
+                            <Button style={{'backgroundColor':'#8a3ffc'}} className={"create-button"} onClick={() =>  {
                                 showModal(true)
                             }}>
                                 <h6>Create Task</h6>
@@ -107,7 +107,7 @@ export default function TaskList() {
                 <Column lg={4} md={8} sm={4} >
                     {
                         <Grid>
-                            <Column lg={4} md={4} sm={4}>
+                            <Column lg={4} md={8} sm={4}>
                                <Tile className={'new-task'}>
                                <h5>New</h5> 
                                </Tile>

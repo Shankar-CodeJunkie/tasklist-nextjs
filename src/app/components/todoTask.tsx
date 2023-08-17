@@ -91,21 +91,21 @@ const TaskItem = (props: any) => {
 
                     <Column lg={4} md={8} sm={4} >
                         <Grid>
-                            <Column lg={{span:1}} md={1} sm={1} >
+                            <Column lg={{span:1}} md={{span:2}} sm={1} >
                                 <Calendar className={"calendarIcon"} size={20} />
                                 <div style={{float:'right'}}>
                                     Due
                                 </div>
                             </Column>
 
-                            <Column lg={2} md={2} sm={2} onClick={editTask}>
+                            <Column lg={2} md={{span:2}} sm={2} onClick={editTask}>
 
                                 <div className='dueBy'>
                                     {props.props.dueBy}
                                 </div>
                             </Column>
 
-                            <Column lg={1} md={1} sm={1}>
+                            <Column lg={1} md={{span:1}} sm={1}>
                                 <div className='delete-task'>
                                     <TrashCan size={20} onClick={() => {
                                         deleteTask(props.props._id)
