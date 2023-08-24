@@ -24,7 +24,7 @@ interface taskItem1 {
 
 export default function TaskList() {
 
-    const [tasks, getTasks] = useState<Array<taskItem1>>([{name:'', taskStatus:''}]);
+    const [tasks, getTasks] = useState<Array<taskItem1>>([{}]);
     const [modal, showModal] = useState(false);
     const [editModal, toggleEditModal] = useState(false);
     useEffect(() => {
@@ -36,7 +36,6 @@ export default function TaskList() {
         getTasks(data1.body)
       }
       fetchData();
-
     }, [])
 
     const sendStatusToParent = (props:any) => {
