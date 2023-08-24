@@ -24,7 +24,7 @@ interface taskItem1 {
 
 export default function TaskList() {
 
-    const [tasks, getTasks] = useState<Array<taskItem1>>([{}]);
+    const [tasks, getTasks] = useState<Array<taskItem1>>([{name:'', taskStatus:''}]);
     const [modal, showModal] = useState(false);
     const [editModal, toggleEditModal] = useState(false);
     useEffect(() => {
@@ -32,7 +32,6 @@ export default function TaskList() {
         //cache-busting query param
         const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`);
         const data1:any = await data.json();
-        console.log('mongodb response', data1);
         getTasks(data1.body)
       }
       fetchData();
