@@ -48,7 +48,7 @@ export default function TaskList() {
             body: JSON.stringify(props)
         };
         async function createTask() {
-            const data:Response = await fetch('/api/createtask', requestOptions);
+            const data:Response = await fetch(`/api/createtask?_cache=${Date.now()}`, requestOptions);
             const data1:any = await data.json();
             getTasks(data1.body)
         }
@@ -64,7 +64,7 @@ export default function TaskList() {
             body: JSON.stringify(props)
         }
         async function updateTask() {
-            const updateRequest:Response = await fetch('/api/updateTask', requestOptions);
+            const updateRequest:Response = await fetch(`/api/updateTask?_cache=${Date.now()}`, requestOptions);
             const updateResponse:any = await updateRequest.json();
             getTasks(updateResponse.body);
         }
@@ -78,7 +78,7 @@ export default function TaskList() {
             body: JSON.stringify(props)
         }
         async function deleteTask() {
-            const deleteRequest:Response = await fetch('/api/deleteTask', requestOptions);
+            const deleteRequest:Response = await fetch(`/api/deleteTask?_cache=${Date.now()}`, requestOptions);
             const deleteResponse:any = await deleteRequest.json();
             getTasks(deleteResponse.body)
         }
