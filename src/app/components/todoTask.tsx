@@ -53,7 +53,7 @@ const TaskItem = (props: any) => {
                         props.props?.tags?.length > 0 && props.props.tags?.split(',').map((x:any, index:number) => {
                             //console.log(x);
                             return (
-                                <Tag type='red' key={index}>{x}</Tag>
+                                <Tag type='blue' key={index}>{x}</Tag>
                             )
                         })
                        }
