@@ -3,7 +3,7 @@
 import React from 'react';
 import '../../../src/app/styles.scss';
 import { Grid, Row, Column, TextInput, Tile, Button } from '@carbon/react';
-import GoogleIcon from '@mui/icons-material/Google';
+//import GoogleIcon from '@mui/icons-material/Google';
 
 export default function Login() {
     return (
@@ -29,7 +29,7 @@ export default function Login() {
                     <div className="cds--offset-lg-6 cds--col-lg-10 cds--offset-md-4 cds--col-md-4 cds--col-sm-4">
                         <Button size={'sm'} className={'sign-in'}>
                             <div className='$icon-on-color' style={{ paddingRight: '2vh' }}>
-                                <GoogleIcon />
+                               
 
                             </div>
                             <div className='$body-compact-02'>
