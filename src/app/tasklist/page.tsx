@@ -29,8 +29,13 @@ export default function TaskList() {
     const [editModal, toggleEditModal] = useState(false);
     useEffect(() => {
       async function fetchData()  {
-        //cache-busting query param
-        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`);
+        //cache-busting query param1
+        const requestOptions = {
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'},
+            revalidate: 0
+        }
+        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, requestOptions);
         const data1:any = await data.json();
         getTasks(data1.body)
       }
