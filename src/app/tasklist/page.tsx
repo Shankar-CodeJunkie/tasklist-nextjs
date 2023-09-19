@@ -34,7 +34,7 @@ export default function TaskList() {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
             revalidate: 0,
-            cache:'no-store'
+            Cache:'no-store'
         }
         const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, requestOptions);
         const data1:any = await data.json();
