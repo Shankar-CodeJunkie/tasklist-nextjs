@@ -46,7 +46,7 @@ export default function TaskList() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(props),
-            cache: 'no-store'
+            revalidate: 0
         };
         async function createTask() {
             const data:Response = await fetch(`/api/createtask?_cache=${Date.now()}`, requestOptions);
