@@ -9,6 +9,7 @@ import TaskItem from '../components/todoTask';
 import CreateTask from '../components/addTask';
 import EditTask from '../components/editTask';
 import next from 'next';
+export const dynamic = "force-static";
 
 type taskItem = {
    name: string
