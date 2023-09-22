@@ -8,6 +8,7 @@ import { Add } from '@carbon/icons-react';
 import TaskItem from '../components/todoTask';
 import CreateTask from '../components/addTask';
 import EditTask from '../components/editTask';
+import next from 'next';
 
 type taskItem = {
    name: string
@@ -36,7 +37,7 @@ export default function TaskList() {
             revalidate: 0,
             Cache:'no-store'
         }
-        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, requestOptions);
+        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, {next: {revalidate: 10}});
         const data1:any = await data.json();
         getTasks(data1.body)
       }
