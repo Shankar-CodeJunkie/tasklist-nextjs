@@ -37,7 +37,7 @@ export default function TaskList() {
             revalidate: 0,
             Cache:'no-store'
         }
-        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, {next: {revalidate: 10}});
+        const data:Response = await fetch(`/api/gettasks?_cache=${Date.now()}`, {next: {revalidate: 10, tags: ['blog']}});
         const data1:any = await data.json();
         getTasks(data1.body)
       }
